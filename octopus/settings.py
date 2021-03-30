@@ -137,7 +137,6 @@ LOGGING = {
         'console': {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
-            'filters': ['require_debug_true']
         },
     },
     'root': {

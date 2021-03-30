@@ -72,14 +72,14 @@ class CSVFileProcessor(IProcessorInterface):
 
         # save 100 at a time
         offset = 0
-        batch_size = 2
+        batch_size = 100
         while True:
             start = offset
             end = min(len(data), offset+batch_size)
             batch = list(islice(data, start, end, 1))
             objects = list(map(lambda d: d.serialize_to_model(),
                                batch))
-            #MeterReading.objects.bulk_create(objects, batch_size)
+            MeterReading.objects.bulk_create(objects, batch_size)
             offset = offset + batch_size
             if offset >= len(data):
                 break
