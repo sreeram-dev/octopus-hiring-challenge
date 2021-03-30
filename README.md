@@ -16,4 +16,6 @@ Octopus Hiring Challenge
 Substitute the filepath in the "<insert_file_name>"
 Multiple files are just appended
 
-
+## Integration Tests
+Uses inmemory sql database
+1. Run `python manage.py test --pattern="*_test*.py"`
